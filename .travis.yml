@@ -10,10 +10,14 @@ addons:
     packages:
       - postgresql-10-postgis-2.5
 
+env:
+  global:
+    - POSTGIS_PGSQL_VERSION=2.5
 services:
   - postgresql
 
 before_script:
+  - set
   - psql -U postgres -c 'create database froide WITH OWNER travis;'
   - psql -U postgres -c 'CREATE EXTENSION postgis;' -d froide
 
