@@ -10,10 +10,6 @@ addons:
     packages:
       - postgresql-10-postgis-2.5
 
-env:
-  global:
-  - PGPORT=5433
-
 services:
   - postgresql
 
