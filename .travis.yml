@@ -14,6 +14,7 @@ addons:
 
 before_script:
   - sudo systemctl start postgresql@11-main
+  - sudo journalctl -u postgresql@11-main
   - psql -U postgres -c 'create database froide WITH OWNER travis;'
   - psql -U postgres -c 'CREATE EXTENSION postgis;' -d froide
 
