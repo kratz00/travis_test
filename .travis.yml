@@ -12,10 +12,8 @@ addons:
       - postgresql-client-11
       - postgresql-11-postgis-2.5
 
-services:
-  - postgresql
-
 before_script:
+  - sudo systemctl start postgresql@11-main
   - psql -U postgres -c 'create database froide WITH OWNER travis;'
   - psql -U postgres -c 'CREATE EXTENSION postgis;' -d froide
 
